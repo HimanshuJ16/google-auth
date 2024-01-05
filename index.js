@@ -4,6 +4,7 @@ const app = express();
 const session = require('express-session');
 
 app.set('view engine', 'ejs');
+app.use(express.static("public"));
 
 app.use(session({
   resave: false,
