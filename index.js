@@ -48,7 +48,7 @@ const GOOGLE_CLIENT_SECRET = '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';
 passport.use(new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:3000/auth/google/callback"
+    // callbackURL: "http://localhost:3000/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
       userProfile=profile;
@@ -66,9 +66,9 @@ app.get('/auth/google/callback',
     res.redirect('/success');
   });
 
-  app.get('/auth/logout', function(req, res, next){
-    req.logout(function(err) {
-      if (err) { return next(err); }
-      res.redirect('/');
-    });
+app.get('/auth/logout', function(req, res, next){
+  req.logout(function(err) {
+    if (err) { return next(err); }
+    res.redirect('/');
   });
+});
