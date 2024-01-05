@@ -2,14 +2,25 @@
 const express = require('express');
 const app = express();
 const session = require('express-session');
+const mongoose = require('mongoose');
+const MongoStore = require('connect-mongo');
+const User = require('../googglee/models/User');
 
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
+const MONGO_URI = "mongodb+srv://hjuberoi16:hjuberoi123@clustercity.jkfeu8m.mongodb.net/?retryWrites=true&w=majority";
+
+mongoose.connect(MONGO_URI).then(() => console.log('MongoDB is Connected!'));
+
 app.use(session({
+  secret: 'keyboard cat',
   resave: false,
-  saveUninitialized: true,
-  secret: 'SECRET' 
+  saveUninitialized: false,
+  cookie: { secure: true }, // THIS WON'T WORK WITHOUT HTTPS
+  store: MongoStore.create({
+    mongoUrl: MONGO_URI
+  })
 }));
 
 app.get('/', function(req, res) {
@@ -31,12 +42,14 @@ app.get('/success', (req, res) => {
 });
 app.get('/error', (req, res) => res.send("error logging in"));
  
-passport.serializeUser(function(user, cb) {
-  cb(null, user);
+passport.serializeUser(function (user, done) {
+  done(null, user.id);
 });
  
-passport.deserializeUser(function(obj, cb) {
-  cb(null, obj);
+passport.deserializeUser(function(id, done) {
+  User.findById(id, function (err, user) {
+    done(err, user);
+  });
 });
 
 
@@ -51,9 +64,26 @@ passport.use(new GoogleStrategy({
     clientSecret: GOOGLE_CLIENT_SECRET,
     callbackURL: "https://google-auth-demo-vvap.onrender.com/auth/google/callback"
   },
-  function(accessToken, refreshToken, profile, done) {
-      userProfile=profile;
-      return done(null, userProfile);
+  async function (accessToken, refreshToken, profile, done) {
+    userProfile=profile;
+    try {
+        let user = await User.findOne({ googleId: profile.id });
+        if (user) {
+            console.log("user is there");
+            done(null, user);
+        } else {
+             const newUser = { 
+                googleId: profile.id,
+                name: profile.displayName,
+                photo: profile.photos[0].value
+            };
+            user = await User.create(newUser);
+            console.log("creating new user");
+            done(null, user);
+        }
+    } catch (err) {
+        console.error(err);
+    }
   }
 ));
  
