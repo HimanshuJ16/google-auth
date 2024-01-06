@@ -87,16 +87,16 @@ passport.use(new GoogleStrategy({
 app.get('/auth/google', 
   passport.authenticate('google', { scope : ['profile', 'email'] }));
  
-app.get('/auth/google/callback', 
+app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/error' }),
   function(req, res) {
     // Successful authentication, redirect success.
     res.redirect('/');
   });
 
-app.get('/auth/logout', function(req, res, next){
-  req.logout(function(err) {
-    if (err) { return next(err); }
-    res.redirect('/');
-  });
-});
+// app.get('/auth/logout', function(req, res, next){
+//   req.logout(function(err) {
+//     if (err) { return next(err); }
+//     res.redirect('/');
+//   });
+// });
