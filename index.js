@@ -1,4 +1,5 @@
 /*  EXPRESS */
+require('dotenv').config();
 const express = require('express');
 const app = express();
 const session = require('express-session');
@@ -9,9 +10,9 @@ const User = require('./models/User');
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
-const MONGO_URI = "mongodb+srv://hjuberoi16:hjuberoi123@clustercity.jkfeu8m.mongodb.net/?retryWrites=true&w=majority";
+// const MONGO_URI = "mongodb+srv://hjuberoi16:hjuberoi123@clustercity.jkfeu8m.mongodb.net/?retryWrites=true&w=majority";
 
-mongoose.connect(MONGO_URI).then(() => console.log('MongoDB is Connected!'));
+mongoose.connect(process.env.MONGO_URI).then(() => console.log('MongoDB is Connected!'));
 
 app.use(session({
   secret: 'keyboard cat',
@@ -19,7 +20,7 @@ app.use(session({
   saveUninitialized: false,
   cookie: { secure: true }, // THIS WON'T WORK WITHOUT HTTPS
   store: MongoStore.create({
-    mongoUrl: MONGO_URI
+    mongoUrl: process.env.MONGO_URI
   })
 }));
 
@@ -56,12 +57,12 @@ passport.deserializeUser(function(id, done) {
 /*  Google AUTH  */
  
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const GOOGLE_CLIENT_ID = '997245908170-kqol0iqbrus8h19nm3pq7mdc9g988h8p.apps.googleusercontent.com';
-const GOOGLE_CLIENT_SECRET = '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';
+// const GOOGLE_CLIENT_ID = '997245908170-kqol0iqbrus8h19nm3pq7mdc9g988h8p.apps.googleusercontent.com';
+// const GOOGLE_CLIENT_SECRET = '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';
 
 passport.use(new GoogleStrategy({
-    clientID: GOOGLE_CLIENT_ID,
-    clientSecret: GOOGLE_CLIENT_SECRET,
+    clientID: process.env.GOOGLE_CLIENT_ID,
+    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
     callbackURL: "https://google-auth-demo-vvap.onrender.com/auth/google/callback"
   },
   async function (accessToken, refreshToken, profile, done) {
