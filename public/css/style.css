@@ -376,6 +376,219 @@ nav h3 {
   background-position: center;
 }
 
+#page5 {
+  height: 120vh;
+  width: 100%;
+  display: flex;
+  /* background-color: #EFEAE3; */
+}
+
+#footer-div p {
+  margin-left: 58%;
+  margin-right: 5%;
+  font-family: neu;
+  color: white;
+  margin-right: 2vw;
+  font-weight: 100;
+  font-size: 1.5vw;
+  line-height: 2vw;
+}
+
+#footer {
+  position: fixed;
+  height: 105vh;
+  width: 100vw;
+  background-color: #000;
+  color: #fff;
+  z-index: 9;
+  bottom: 0;
+  display: flex;
+  /* align-items: flex-end; */
+  justify-content: flex-end;
+  flex-direction: column;
+  padding: 1vw 3vw;
+}
+
+#footer h1 {
+  font-size: 23vw;
+}
+
+#footer-div {
+  margin-top: 5%;
+  margin-left: 6%;
+  height: 20vh;
+  width: 100%;
+  /* background-color: red; */
+  z-index: 10;
+  display: flex;
+  align-items: center;
+}
+
+#footer-div a {
+  z-index: 15;
+  text-decoration: none;
+  color: #fff;
+  font-size: 2.2vw;
+  line-height: 3vw;
+
+}
+
+#footer-div a:hover {
+  color: #F4AB99;
+}
+
+.gooey1 {
+  height: 27vw;
+  width: 50vw;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(to top right, #ff2d03, #ff5c0b);
+  top: -10%;
+  left: -25%;
+  filter: blur(20px);
+  animation-name: gooey;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+
+}
+
+.gooey2 {
+  height: 17vw;
+  width: 80vw;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(to top right, #ff2d03, #ff5c0b);
+  top: -10%;
+  left: 0%;
+  filter: blur(20px);
+  animation-name: gooey;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+
+}
+
+.gooey3 {
+  height: 15vw;
+  width: 25vw;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(to top right, #ff2d03, #ff5c0b);
+  top: 0%;
+  left: 10%;
+  filter: blur(20px);
+  animation-name: gooey;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+
+}
+.gooey4 {
+  height: 16vw;
+  width: 35vw;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(to top right, #ff2d03, #ff5c0b);
+  top: -5%;
+  right: 10%;
+  filter: blur(20px);
+  animation-name: gooey;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+
+}
+
+.gooey5 {
+  height: 35vw;
+  width: 35vw;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(to top right, #ff2d03, #ff5c0b);
+  top: -10%;
+  right: -25%;
+  filter: blur(20px);
+  animation-name: gooey;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+
+}
+
+.gooey6 {
+  height: 15vw;
+  width: 55vw;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(to top right, #ff2d03, #ff5c0b);
+  top: -5%;
+  right: 0%;
+  filter: blur(20px);
+  animation-name: gooey;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+
+}
+
+.gooey7 {
+  height: 20vw;
+  width: 40vw;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(to top right, #ff2d03, #ff5c0b);
+  top: -2%;
+  right: -15%;
+  filter: blur(20px);
+  animation-name: gooey;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+
+}
+
+
+#footer-bottom {
+  border-top: 1px solid #aeaeae;
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#footer-bottom a {
+  text-decoration: none;
+  color: #fff;
+}
+
+#full-scr {
+  height: 100vh;
+  width: 100%;
+  background-color: #00000070;
+  position: fixed;
+  z-index: 99;
+  top: -100%;
+  transition: all ease 0.5s;
+}
+
+#full-div1 {
+  height: 50%;
+  width: 100%;
+  background-color: #EFEAE3;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+
+}
+
 @media (max-width:600px) {
 
   #page1 {

@@ -23,7 +23,7 @@ app.use(session({
 }));
 
 app.get('/', function(req, res) {
-  res.render('pages/auth', {user: userProfile});
+  res.render('pages/home', {user: userProfile});
 });
 
 const port = process.env.PORT || 3000;
