@@ -10,8 +10,6 @@ const User = require('./models/User');
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
 
-// const MONGO_URI = "mongodb+srv://hjuberoi16:hjuberoi123@clustercity.jkfeu8m.mongodb.net/?retryWrites=true&w=majority";
-
 mongoose.connect(process.env.MONGO_URI).then(() => console.log('MongoDB is Connected!'));
 
 app.use(session({
@@ -25,7 +23,7 @@ app.use(session({
 }));
 
 app.get('/', function(req, res) {
-  res.render('pages/auth');
+  res.render('pages/auth', {user: userProfile});
 });
 
 const port = process.env.PORT || 3000;
@@ -57,8 +55,6 @@ passport.deserializeUser(function(id, done) {
 /*  Google AUTH  */
  
 var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-// const GOOGLE_CLIENT_ID = '997245908170-kqol0iqbrus8h19nm3pq7mdc9g988h8p.apps.googleusercontent.com';
-// const GOOGLE_CLIENT_SECRET = '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';
 
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -95,7 +91,7 @@ app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/error' }),
   function(req, res) {
     // Successful authentication, redirect success.
-    res.redirect('/success');
+    res.redirect('/');
   });
 
 app.get('/auth/logout', function(req, res, next){

@@ -92,6 +92,8 @@ nav {
   text-decoration: none;
   position: relative;
   z-index: 9;
+  display: flex; 
+  align-items: center;
 }
 
 #nav-part2 h4:hover a {

@@ -29,7 +29,13 @@
                 <div id="nav-part2">
                     <h4><a href="#">Work</a></h4>
                     <h4><a href="#">Projects</a></h4>
-                    <h4><a href="/auth/google">Sign in</a></h4>
+
+                    <% if(user) { %>
+                        <h4 id="log" style="padding-left: 0%; padding-top: 0%; padding-bottom: 0%;"><a><img src="<%= user.photos[0].value %>" style="height: 6vh; width: 3vw; border-radius: 50%;" />&nbsp;&nbsp;&nbsp;Hi, <%= user.displayName.split(" ")[0] %></a></h4>
+                        <h4 id="out"><a href="/auth/logout">Logout</a></h4>
+                        <% } else { %>
+                            <h4><a href="/auth/google">Sign in</a></h4>
+                            <% } %>
                 </div>
                 <h3>Menu</h3>
             </nav>
