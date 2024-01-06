@@ -26,6 +26,10 @@ app.get('/', function(req, res) {
   res.render('pages/home', {user: userProfile});
 });
 
+app.get('/works', function(req, res) {
+  res.render('pages/works', {user: userProfile});
+});
+
 const port = process.env.PORT || 3000;
 app.listen(port , () => console.log('App listening on port ' + port));
 

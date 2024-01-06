@@ -41,6 +41,14 @@ html, body {
   padding: 0 2vw;
 }
 
+#workpage1 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #EFEAE3;
+  position: relative;
+  padding: 0 2vw;
+}
+
 nav {
   padding: 2vw 0vw;
   width: 100%;
@@ -125,6 +133,18 @@ nav h3 {
   font-size: 10vw;
   text-align: right;
   line-height: 8vw;
+}
+
+.worktitle span {
+  font-size: 10vw;
+  font-weight: 900;
+  text-align: center;
+  justify-content: center;
+  margin-left: 25vw;
+  margin-top: 25%;
+  z-index: 99;
+  line-height: 9vw;
+  letter-spacing: .01vw;
 }
 
 #page1 video {
@@ -298,6 +318,23 @@ nav h3 {
   top: 58%;
   left: 25%;
   filter: blur(20px);
+  animation-name: gooey;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+
+}
+
+#workgooey {
+  height: 35vw;
+  width: 35vw;
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(to top right, #ff0303, #ff890b);
+  top: 38%;
+  left: 10%;
+  filter: blur(10px);
   animation-name: gooey;
   animation-duration: 6s;
   animation-iteration-count: infinite;
