@@ -6,6 +6,7 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const MongoStore = require('connect-mongo');
 const User = require('./models/User');
+const { ensureAuth, ensureGuest } = require('./middleware/auth');
 
 app.set('view engine', 'ejs');
 app.use(express.static("public"));
@@ -18,11 +19,13 @@ app.use(session({
   saveUninitialized: false,
   cookie: { secure: true }, // THIS WON'T WORK WITHOUT HTTPS
   store: MongoStore.create({
-    mongoUrl: process.env.MONGO_URI
+    mongoUrl: process.env.MONGO_URI,
+    collectionName: 'session',
+    autoRemove: 'disabled'
   })
 }));
 
-app.get('/', function(req, res) {
+app.get('/', ensureGuest, function(req, res) {
   res.render('pages/home', {user: userProfile});
 });
 
@@ -39,7 +42,7 @@ var userProfile;
  
 app.use(passport.initialize());
 app.use(passport.session());
- 
+
 app.get('/success', (req, res) => {
   res.render('pages/success', {user: userProfile});
 });
@@ -63,7 +66,7 @@ var GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: "https://google-auth-demo-vvap.onrender.com/auth/google/callback"
+    callbackURL: "http://localhost:3000/auth/google/callback"
   },
   async function (accessToken, refreshToken, profile, done) {
     userProfile=profile;
