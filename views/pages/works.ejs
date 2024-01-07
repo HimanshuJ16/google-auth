@@ -88,9 +88,10 @@
     <%- include('../includes/scripts.ejs'); %>
     <script>
       gsap.from('#spantitle', {
-        stagger: 0.25,
-        opacity: 0.25
-      })     
-     </script>
+        opacity: 0.25,
+        duration: 1,
+        ease: "power1.in",
+      })
+    </script>
   </body>
 </html> 
