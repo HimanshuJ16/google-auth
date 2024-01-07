@@ -6,8 +6,8 @@
       <div id="workpage1">
         <%- include('../includes/nav.ejs'); %>
         <div class="worktitle">
-          <br><br><br><br><br><br><span>&nbsp;TURNING</span><br>
-          <div style="z-index: 99; position: relative;">
+          <br><br><br><br><br><br><span id="spantitle">&nbsp;TURNING</span><br>
+          <div style="z-index: 99; position: relative;" id="spantitle">
             <span style="margin-left: 18%;">IDEAS&nbsp;INTO</span><br><span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;REALITY</span>
           </div>
 
@@ -15,8 +15,82 @@
         <div id="workgooey">
 
         </div>
+        <br><br><br><br><br>
+       <div style="display: flex; align-items: center;">
+        <img style="border-radius: 20px; position: relative; height: 50vh; width: 20vw; margin-left: 4vw;" src="https://assets-global.website-files.com/64d3dd9edfb41666c35b15b7/64d3dd9edfb41666c35b15e2_Studio%2520Image-p-500.jpg" alt="" srcset="">
+        <p>We love creating experiences from idea to install, but are also comfortable jumping into a project at any point in the process, from Creative, to Design, to Project Management and Implementation.</p>
+       </div>
+      </div>
+      <div id="workpage2">
+        <br><br><br><br><br>
+        <div class="workinfodiv">
+          <h1>CREATE</h1>
+          <div style="display: flex;">
+            <p>Crafting the concepts and experiences. Connecting the dots and amplifying the story.</p>
+            <div style="width: 100%;">
+              <h2><span>01</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Strategy & Ideation</h2>
+              <!-- <hr style="color: #c89867;"> -->
+              <h2><span>02</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Concept Development</h2>
+              <h2><span>03</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Environmental Design</h2>
+              <h2><span>04</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graphic Design</h2>
+              <h2><span>05</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Visual Merchandising</h2>
+              <h2><span>06</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3D Renderings</h2>
+              <h2><span>07</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consumer Experience</h2>
+            </div>
+          </div>
+        </div>
+        <br><br><br><br>
+        <div class="workinfodiv">
+          <h1>CREATE</h1>
+          <div style="display: flex;">
+            <p>Crafting the concepts and experiences. Connecting the dots and amplifying the story.</p>
+            <div style="width: 100%;">
+              <h2><span>01</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Strategy & Ideation</h2>
+              <!-- <hr style="color: #c89867;"> -->
+              <h2><span>02</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Concept Development</h2>
+              <h2><span>03</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Environmental Design</h2>
+              <h2><span>04</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graphic Design</h2>
+              <h2><span>05</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Visual Merchandising</h2>
+              <h2><span>06</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3D Renderings</h2>
+              <h2><span>07</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consumer Experience</h2>
+            </div>
+          </div>
+        </div>
+        <br><br><br><br>
+        <div class="workinfodiv">
+          <h1>CREATE</h1>
+          <div style="display: flex;">
+            <p>Crafting the concepts and experiences. Connecting the dots and amplifying the story.</p>
+            <div style="width: 100%;">
+              <h2><span>01</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Strategy & Ideation</h2>
+              <!-- <hr style="color: #c89867;"> -->
+              <h2><span>02</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Concept Development</h2>
+              <h2><span>03</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Environmental Design</h2>
+              <h2><span>04</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Graphic Design</h2>
+              <h2><span>05</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Visual Merchandising</h2>
+              <h2><span>06</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3D Renderings</h2>
+              <h2><span>07</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Consumer Experience</h2>
+            </div>
+          </div>
+        </div>
+        <div style="height: 20vh;"></div>
+      </div>  
+      <div id="page5">
+            
+      </div>
+      <div id="full-scr">
+          <div id="full-div1">
+
+          </div>
       </div>
     </div>
+    <%- include('../includes/footer.ejs'); %>
     <%- include('../includes/scripts.ejs'); %>
+    <script>
+      gsap.from('#spantitle', {
+        stagger: 0.25,
+        opacity: 0.25
+      })     
+     </script>
   </body>
 </html> 

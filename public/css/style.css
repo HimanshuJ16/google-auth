@@ -49,6 +49,55 @@ html, body {
   padding: 0 2vw;
 }
 
+.workinfodiv h1 {
+  font-size: 25vw;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+#workpage2 {
+  background: linear-gradient(#efeae3, #ff6f00);
+  min-height: 100vh;
+  width: 100%;
+  padding: 0 2vw;
+}
+
+#workpage1 p {
+  font-size: 2.5vw;
+  position: relative;
+  margin-left: 12vw;
+  margin-right: 20vw;
+  font-weight: 700;
+  line-height: 37.5px;
+}
+
+.workinfodiv p {
+  /* background-color: #FE320A; */
+  font-size: 2.5vw;
+  position: relative;
+  margin-left: 6vw;
+  margin-right: 32vw;
+  font-weight: 700;
+  line-height: 40px;
+}
+
+.workinfodiv h2 {
+  margin-left: -10vw;
+  padding: .5vw 2vw;
+  /* text-decoration: 1px underline #c89867; */
+  margin-top: 10px;
+  font-weight: 100;
+  font-size: 25px;
+}
+
+.workinfodiv span {
+  margin-left: -5vw;
+  font-weight: 100;
+  color: #9d4d0a;
+  font-size: 17px;
+  padding: 2vw 0vw;
+}
+
 nav {
   padding: 2vw 0vw;
   width: 100%;
@@ -327,12 +376,12 @@ nav h3 {
 }
 
 #workgooey {
-  height: 35vw;
-  width: 35vw;
+  height: 37vw;
+  width: 37vw;
   position: absolute;
   border-radius: 50%;
   background: linear-gradient(to top right, #ff0303, #ff890b);
-  top: 38%;
+  top: 27%;
   left: 10%;
   filter: blur(10px);
   animation-name: gooey;
