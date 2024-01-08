@@ -415,7 +415,7 @@ nav h3 {
 }
 
 .elem {
-  height: 150px;
+  height: 130px;
   width: 100%;
   position: relative;
 
@@ -461,6 +461,46 @@ nav h3 {
   background-size: cover;
   background-position: center;
 }
+
+#page4 {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #EFEAE3;
+  padding: 10vw 2vw;
+}
+
+#page4 p {
+  font-size: 1.5vw;
+  font-weight: 100;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  width: 30%;
+  border-left: 1px solid #cc5e06;
+  padding: 0 2vw;
+}
+
+.swiper-slide h3 {
+  font-size: 2vw;
+  font-weight: 500;
+}
+
+.swiper-slide img {
+  border-radius: 25px;
+}
+
+.swiper-slide p {
+  margin-top: 1vw;
+  font-size: 1.3vw;
+  font-weight: 100;
+  /* border-radius: 25px; */
+}
+
 
 #page5 {
   height: 120vh;
